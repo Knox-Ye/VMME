@@ -23,8 +23,7 @@ jobs:
         run: |
           mkdir -p output_videos
           # -a 指定链接文件；-o 指定输出目录和文件名；-f 限制最高720p（MP4格式）以节省你的下载时间和空间
-          yt-dlp -P "output_videos" -o "%(id)s.%(ext)s" -f "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -a urls.txt
-
+          yt-dlp -P "output_videos" -o "%(id)s.%(ext)s" -f "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -a short_urls.txt
       # 4. 将下载好的视频文件夹打包成 zip 压缩包
       - name: Zip the videos
         run: |
